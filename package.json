@@ -1,0 +1,47 @@
+{
+  "name": "@codekraft-studio/vue-autoscroll",
+  "description": "Automatic scroll-down on event directive for VueJs",
+  "version": "0.1.0",
+  "main": "dist/VueAutoscroll.umd.js",
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "start": "vue-cli-service serve --mode production --open",
+    "build": "vue-cli-service build --target lib --name VueAutoscroll lib/index.js",
+    "build:demo": "vue-cli-service build --dest demo",
+    "publish:demo": "git subtree push --prefix demo origin gh-pages",
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.1.1",
+    "@vue/cli-plugin-eslint": "^3.1.5",
+    "@vue/cli-service": "^3.1.4",
+    "axios": "^0.18.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0-0",
+    "lint-staged": "^7.2.2",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
