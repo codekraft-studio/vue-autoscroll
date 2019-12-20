@@ -32,42 +32,24 @@ Than place the directive on the container you want to scroll automatically.
 You can also use custom scroll settings.
 
 ```html
-<ul class="messages-container" v-autoscroll="{smooth: true, always: true}">
+<ul class="messages-container" v-autoscroll="{ smooth: false, always: true }">
   <li v-for="message in messages" v-text="message" class="message"></li>
 </ul>
 ```
 
+If you have a complicate html structure and you need to watch also for grandchildrens and more, you can use the __deep__ modifier.
+
+```html
+<div v-autoscroll.deep>
+  <div v-for="(entries, key) in groupedEntries">
+    <div>{{key}}</div>
+    <div v-for="entry in entries">{{entry}}</div>
+  </div>
+</div>
+```
+
 ---
 
-## Project setup
-```
-yarn install
-```
+## License
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your end-to-end tests
-```
-yarn run test:e2e
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Released with [MIT License](./LICENSE) © [codekraft-studio](https://github.com/codekraft-studio)
