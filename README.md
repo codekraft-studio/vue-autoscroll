@@ -1,19 +1,18 @@
 # vue-autoscroll
 
-> Automatic scroll-down on event directive for VueJs
+> Automatic scroll-down directive for VueJs
 
 ### [DEMO](https://codekraft-studio.github.io/vue-autoscroll/)
 
 ## Installation
 
-Download the project using your favourite package manager:
+Install the project locally using your favourite package manager.
 
 ```
 npm install @codekraft-studio/vue-autoscroll
-yarn add @codekraft-studio/vue-autoscroll
 ```
 
-Load the module inside your application:
+Register the plugin in your Vue application.
 
 ```js
 import Vue from 'vue'
@@ -22,7 +21,7 @@ import VueAutoscroll from '@codekraft-studio/vue-autoscroll'
 Vue.use(VueAutoscroll)
 ```
 
-Than place the directive on the container you want to scroll automatically:
+Than place the directive on the container you want to scroll automatically.
 
 ```html
 <ul class="messages-container" v-autoscroll>
@@ -30,7 +29,7 @@ Than place the directive on the container you want to scroll automatically:
 </ul>
 ```
 
-or with options:
+You can also use custom scroll settings.
 
 ```html
 <ul class="messages-container" v-autoscroll="{smooth: true, always: true}">

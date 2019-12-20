@@ -2,32 +2,32 @@
   <div id="app">
     <header class="header">
       <div class="navbar-brand">
-        <img alt="Vue logo" src="./assets/logo.png">
+        <img alt="Vue logo" src="./assets/logo.png" />
       </div>
 
       <div class="navbar-brand-name">
         <h1 class="title">Vue Autoscroll</h1>
         <h2 class="subtitle">
-          scrolls to bottom when <strong>new content</strong> is added
+          scrolls to bottom when
+          <strong>new content</strong> is added
         </h2>
       </div>
     </header>
 
     <div class="container">
-
       <div class="chat-container">
         <nav class="level chat-settings">
           <div class="level-left">
             <div class="level-item">
               <label class="checkbox">
-                <input type="checkbox" v-model="options.smooth">
+                <input type="checkbox" v-model="options.smooth" />
                 Smooth scroll
               </label>
             </div>
 
             <div class="level-item">
               <label class="checkbox">
-                <input type="checkbox" v-model="options.always">
+                <input type="checkbox" v-model="options.always" />
                 Always Scroll
               </label>
             </div>
@@ -35,10 +35,17 @@
 
           <div class="level-right">
             <div class="level-item">
-              <a class="button is-small" :class="{
+              <a class="button is-small is-dark" @click="senteces = []">Clear</a>
+            </div>
+
+            <div class="level-item">
+              <a
+                class="button is-small"
+                :class="{
                 'is-primary': !isStreaming,
                 'is-warning': isStreaming
-              }">
+              }"
+              >
                 <span v-show="!isStreaming" @click="startStream">Start Stream</span>
                 <span v-show="isStreaming" @click="stopStream">Stop Stream</span>
               </a>
@@ -53,17 +60,24 @@
         </ul>
 
         <div class="messages-input">
-          <input class="input is-medium" v-model="newSentence" placeholder="Enter your message" @keyup.enter="add" @keyup.esc="clear" />
+          <input
+            class="input is-medium"
+            v-model="newSentence"
+            placeholder="Enter your message"
+            @keyup.enter="add"
+            @keyup.esc="clear"
+          />
         </div>
       </div>
-
     </div>
 
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          The source code is licensed <a href="https://github.com/codekraft-studio/vue-autoscroll/blob/master/LICENSE">MIT</a>.
-          Made with ♥ by <a href="https://github.com/codekraft-studio">Codekraft Studio</a>.
+          The source code is licensed
+          <a href="https://github.com/codekraft-studio/vue-autoscroll/blob/master/LICENSE">MIT</a>.
+          Made with ♥ by
+          <a href="https://github.com/codekraft-studio">Codekraft Studio</a>.
         </p>
       </div>
     </footer>
@@ -83,7 +97,7 @@ export default {
       newSentence: '',
       senteces: [],
       options: {
-        always: true,
+        always: false,
         smooth: true
       }
     }
@@ -147,11 +161,17 @@ header {
   }
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 .chat-container {
   max-width: 500px;
   margin: 0 auto;
   .chat-settings {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
   }
   .messages-container {
     background-color: #eee;
